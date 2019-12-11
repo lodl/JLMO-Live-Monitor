@@ -1,2 +1,1 @@
-# jorm-live-monitor
-JÖRM Live Monitor for Jormungandr
+# JLMO Live Monitor for Jormungandr
