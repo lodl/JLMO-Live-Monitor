@@ -1,1 +1,1 @@
-# JLMO Live Monitor for Jormungandr
+# JLMÖ Live Monitor for Jormungandr
