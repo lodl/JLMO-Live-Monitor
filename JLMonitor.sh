@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### JLMÖ Jormungandr Live Monitor v0.6.0 ###
-### Author: Ocycle ### 
+### Author: ADASnakePool ### 
 ### Updated: 20200128 ###
 
 ### TO BE UPDATE WHEN DEPLOYED ON GITHUB
