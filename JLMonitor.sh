@@ -1,25 +1,27 @@
-#!/bin/bash
+#!/run/current-system/sw/bin/bash
 
 ### JLMÖ Jormungandr Live Monitor v0.6.0 ###
 ### Author: Ocycle ### 
-### Updated: 20200127 ###
+### Updated: 20200128 ###
 
+### TO BE UPDATE WHEN DEPLOYED ON GITHUB
+### Important!!! ### ######################################################## ###
 ### DECLARE VARIABLES ###
 
 ### BLOCKCHAIN DIR and DB ###
-export BCHAINDIR="$HOME/<YOUR-PATH>"
-export BCHAINDB="$HOME/<YOUR-PATH>/blocks.sqlite"
+export BCHAINDIR="$HOME/JormungandrWorkDir/Blockchain"
+export BCHAINDB="$HOME/JormungandrWorkDir/Blockchain/blocks.sqlite"
 
 ### REST API STRING ###
-export RESTPORT=<YOUR-REST-PORT>
+export RESTPORT=8443
 export HOST="--host http://127.0.0.1:$RESTPORT/api"
 export FORMAT="--output-format yaml"
 
 ### STAKEPOOL OWNER ACCOUNTS ###
-export STKPOOLOWNACC=<YOUR-STAKEPOOL-OWNER-ACCOUNT>
+export STKPOOLOWNACC=ca1s5eag5na0gparzgpg3myve39xsd9rtct89tnk3uuyt93gzfu0v6pcxzcvwz
 
 ### STAKE POOL ID ###
-export STKPOOLID=<YOUR-STAKEPOOL-ID>
+export STKPOOLID=902a7e2e723456177e807ba6c115ba9203dc3151a03f6113691c93cb01d35bd5
 
 ### CALCULATE THE SIZE OF THE TERMINAL - NEED FEEDBACK FROM TESTERS ###
 terminal_size() {
@@ -484,12 +486,12 @@ export STKPOOLNUM=`echo -e $gre2\STAKEPOOLS COUNT:$whi $(eval $STKPOOLS 2>/dev/n
 ### WIDGETS: REST LEADER LOGS VALUES ###
 export SLTLEADHEAD=`echo $red\SLOT LEADER: | delcolboldpipe11`
 export ENCLEAD=`echo $gre2\EVENTS:$whi $(eval $GETLEADERSLOG 2>/dev/null | grep enclave_leader_id | sed 's/  //' | tr -s '\n' ' ' | cut -f2- -d: | sed 's/enclave_leader_id://')`
-export LEADSTAT=`echo $gre2\STATUS:$whi $(eval $GETLEADERSLOG 2>/dev/null | grep status | sed 's/  //' | tr -s '\n' ' ' | cut -f2- -d: | sed 's/status: //' | sed 's/ //') | delcolboldpipe22`
-export LEADSCHED=`echo -e $gre2\SCHEDULED AT EPOCH:$whi $(eval $GETLEADERSLOG 2>/dev/null | grep scheduled_at_date | sed 's/  //' | tr -s '\n' ' ' | cut -f2- -d: | sed 's/scheduled_at_date://') | delcolboldpipe3`
-export SCHEDTIM=`echo $gre2\SCHEDULED TIME:$whi $(eval $GETLEADERSLOG 2>/dev/null | grep scheduled_at_time | sed 's/  //' | tr -s '\n' ' ' | cut -f2- -d: | sed 's/ scheduled_at_time://' | sed 's/T/-/' | sed 's/ "//' | sed 's/" "/ /' | sed 's/+00:00"//' | sed 's/+00:00//' | sed 's/T/-/')` ### UNUSED 
-export SCHEDCREAT=`echo $gre2\CREATED TIME:$whi $(eval $GETLEADERSLOG 2>/dev/null | grep created_at_time | sed 's/- //' | tr -s '\n' ' ' | cut -f2- -d: | sed 's/ created_at_time://' | sed 's/T/-/' | sed 's/ "//' | sed 's/" "/ /' | sed 's/+00:00//' | sed 's/+00:00"//')` ### UNUSED 
-export ENDSCHED=`echo $gre2\FINISHED TIME:$whi $(eval $GETLEADERSLOG 2>/dev/null | grep finished_at_time | sed 's/  //' | tr -s '\n' ' ' | cut -f2- -d: | sed 's/finished_at_time//' | sed 's/T/-/' | sed 's/ "//' | sed 's/" "/ /' | sed 's/+00:00"//' | sed 's/+00:00//' | sed 's/T/-/')` ### UNUSED 
-export WAKEAT=`echo $gre2\WAKE TIME:$whi $(eval $GETLEADERSLOG 2>/dev/null | grep wake_at_time | sed 's/  //' | tr -s '\n' ' ' | cut -f2- -d: | sed 's/wake_at_time//' | sed 's/T/-/' | sed 's/ "//' | sed 's/" "/ /' | sed 's/+00:00"//' | sed 's/+00:00//' | sed 's/T/-/')` ### UNUSED 
+export LEADSTAT=`echo $gre2\STATUS:$whi $(eval $GETLEADERSLOG 2>/dev/null | grep status | sed 's/  //' | tr -s '\n' ' ' | cut -f2- -d: | sed 's/status: //' | sed 's/ //')`
+export LEADSCHED=`echo -e $gre2\SCHEDULED AT EPOCH:$whi $(eval $GETLEADERSLOG 2>/dev/null | grep scheduled_at_date | sed 's/  //' | tr -s '\n' ' ' | cut -f2- -d: | sed 's/scheduled_at_date://')`
+#export SCHEDTIM=`echo $gre2\SCHEDULED TIME:$whi $(eval $GETLEADERSLOG 2>/dev/null | grep scheduled_at_time | sed 's/  //' | tr -s '\n' ' ' | cut -f2- -d: | sed 's/ scheduled_at_time://' | sed 's/T/-/' | sed 's/ "//' | sed 's/" "/ /' | sed 's/+00:00"//' | sed 's/+00:00//' | sed 's/T/-/')` ### UNUSED 
+#export SCHEDCREAT=`echo $gre2\CREATED TIME:$whi $(eval $GETLEADERSLOG 2>/dev/null | grep created_at_time | sed 's/- //' | tr -s '\n' ' ' | cut -f2- -d: | sed 's/ created_at_time://' | sed 's/T/-/' | sed 's/ "//' | sed 's/" "/ /' | sed 's/+00:00//' | sed 's/+00:00"//')` ### UNUSED 
+#export ENDSCHED=`echo $gre2\FINISHED TIME:$whi $(eval $GETLEADERSLOG 2>/dev/null | grep finished_at_time | sed 's/  //' | tr -s '\n' ' ' | cut -f2- -d: | sed #'s/finished_at_time//' | sed 's/T/-/' | sed 's/ "//' | sed 's/" "/ /' | sed 's/+00:00"//' | sed 's/+00:00//' | sed 's/T/-/')` ### UNUSED 
+#export WAKEAT=`echo $gre2\WAKE TIME:$whi $(eval $GETLEADERSLOG 2>/dev/null | grep wake_at_time | sed 's/  //' | tr -s '\n' ' ' | cut -f2- -d: | sed 's/wake_at_time//' | sed 's/T/-/' | sed 's/ "//' | sed 's/" "/ /' | sed 's/+00:00"//' | sed 's/+00:00//' | sed 's/T/-/')` ### UNUSED 
 #################################### ###
 
 
