@@ -1,4 +1,4 @@
-#!/run/current-system/sw/bin/bash
+#!/bin/bash
 
 ### JLMÖ Jormungandr Live Monitor v0.6.0 ###
 ### Author: Ocycle ### 
