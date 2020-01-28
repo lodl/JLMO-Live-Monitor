@@ -7,19 +7,19 @@
 ### DECLARE VARIABLES ###
 
 ### BLOCKCHAIN DIR and DB ###
-export BCHAINDIR="<YOUR-STORAGE-PATH>"
-export BCHAINDB="<YOUR-STORAGE-PATH>/blocks.sqlite"
+export BCHAINDIR=your-storage-path 
+export BCHAINDB=your-storage-path/blocks.sqlite
 
 ### REST API STRING ###
-export RESTPORT=<YOUR-REST-PORT>
+export RESTPORT=your-rest-port
 export HOST="--host http://127.0.0.1:$RESTPORT/api"
 export FORMAT="--output-format yaml"
 
 ### STAKEPOOL OWNER ACCOUNTS ###
-export STKPOOLOWNACC=<YOUR-STAKEPOOL-OWNER-ACCOUNT-ADDRESS>
+export STKPOOLOWNACC=your-stakepool-owner-account-address
 
 ### STAKE POOL ID ###
-export STKPOOLID=<YOUR-STAKEPOOL-ID>
+export STKPOOLID=your-stakepool-id
 
 ### CALCULATE THE SIZE OF THE TERMINAL - NEED FEEDBACK FROM TESTERS ###
 terminal_size() {
