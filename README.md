@@ -1,4 +1,4 @@
-# JLMÖ Live Monitor for Jormungandr
+# JLMÖ Live Monitor for Jormungandr (for Linux)
 
 Prior to launch the script, please open it and set variables in following lines:
 
