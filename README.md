@@ -2,9 +2,8 @@
 
 Prior to launch the script, please edit it and set variables in following lines:
 
-### BLOCKCHAIN DIR and DB ###
+### BLOCKCHAIN DIR ###
 LINE 10: export BCHAINDIR=your-storage-path
-LINE 11: export BCHAINDB=your-storage-path/blocks.sqlite
 
 ### REST API STRING ###
 LINE 14: export RESTPORT=your-rest-port
