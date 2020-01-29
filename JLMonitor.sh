@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### JLMÖ Jormungandr Live Monitor v0.6.0 ###
+### JLMO Jormungandr Live Monitor v0.6.0 ###
 ### Author: ADASnakePool ### 
 ### Updated: 20200128 ###
 
@@ -384,7 +384,7 @@ echo
 echo -e $red\If Node has been started/restarted, $whi\please wait for full REST API availability.
 echo
 echo
-echo -e $gre\Starting JLMÖ Jormungandr Live Monitor $s2
+echo -e $gre\Starting JLMO Jormungandr Live Monitor $s2
 echo
 tput civis
 sleep 1
@@ -414,7 +414,7 @@ export CONNESTABLISHED=`echo $gre2\ESTABLISHED CONNECTIONS:$whi $(echo $ESTABLCO
 
 ########################################## ###
 ### WIDGETS: TEXT HEADERS AND OTHER STUFFS ###
-export HEADMAIN=`echo -e $gre2\JLMÖ Jormungandr Live Monitor:$whi $(date -u) $gre2$s2 | delcolboldpipe2`
+export HEADMAIN=`echo -e $gre2\JLMO Jormungandr Live Monitor:$whi $(date -u) $gre2$s2 | delcolboldpipe2`
 export HEADINFO1=`echo $red\SYSTEM INFO: | delcol6`  
 export HEADINFO2=`echo $red\NODE STATISTICS: | delcol6`
 export HEADINFO3=`echo $red\NODE SETTINGS: | delcol6 | delcolboldpipe15`
@@ -543,7 +543,7 @@ done
 elif [ -z "$JPID" ] ; then
 echo
 echo
-echo -e $red\Jormungandr is not Running. $gre\JLMÓ Jormungandr Live Monitor will Exit. $s2
+echo -e $red\Jormungandr is not Running. $gre\JLMO Jormungandr Live Monitor will Exit. $s2
 echo
 echo
 echo
