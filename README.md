@@ -16,7 +16,7 @@ LINE 22: export STKPOOLID=your-stakepool-id
   
 If you encounter issues, please report them here and not in Stakepool Group.
 
-If you liked the script, please consider a tADA donation to: 
+If you find this script useful, please consider a tADA donation to: 
 
 addr1sjun9xzgnlw6tzqnw678m2zv368gwtt22d2k469kmevkjwuwzdszhq298ww7gww9ukxur574dm5efvp2c6eyn6r42drtmk2sjyhm802yrxznur
 
