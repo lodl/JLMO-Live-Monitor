@@ -8,7 +8,7 @@
 
 ### BLOCKCHAIN DIR and DB ###
 export BCHAINDIR=your-storage-path 
-export BCHAINDB=your-storage-path/blocks.sqlite
+export BCHAINDB="${BCHAINDIR}/blocks.sqlite"
 
 ### REST API STRING ###
 export RESTPORT=your-rest-port
