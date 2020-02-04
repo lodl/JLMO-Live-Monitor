@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### JLMO Jormungandr Live Monitor v0.6.1 ###
+### JLMÖ Jormungandr Live Monitor v0.6.1 ###
 ### Author: ADASnakePool ### 
 ### Updated: 20200204 ###
 
@@ -114,8 +114,8 @@ awk '{len=41-length;printf("%s%*s\n",$0,len,"'$black"|"'")}'
 }
 
 delcol13() { # green pipe
-awk '{len=62-length;printf("%s%*s\n",$0,len,"'$gre2"|"'")}'
-} ### UNUSED
+awk '{len=105-length;printf("%s%*s\n",$0,len,"'$gre2"|"'")}'
+}
 
 delcol14() { # black pipe
 awk '{len=55-length;printf("%s%*s\n",$0,len,"'$black"|"'")}'
@@ -382,7 +382,7 @@ echo
 echo -e $red\If Node has been started/restarted, $whi\please wait for full REST API availability.
 echo
 echo
-echo -e $gre\Starting JLMO Jormungandr Live Monitor $s2
+echo -e $gre\Starting JLMÖ Jormungandr Live Monitor $s2
 echo
 tput civis
 sleep 1
@@ -400,6 +400,8 @@ export CPUUSAGE=`echo -e $gre2\CPU USAGE: $whi$(ps -C jormungandr -o %cpu) | del
 export MEMUSAGE=`echo -e $gre2\MEMORY USAGE: $whi$(ps -C jormungandr -o %mem) | delcol2`
 export BCHAINSIZE=`echo -e $gre2\LOCAL STORAGE: $whi$(du -hs $BCHAINDIR | cut -f1) | delcol3`
 export BLOCKSINDB=`echo -e $gre2\STORED BLOCKS: $whi$(sqlite3 $BCHAINDB "select count (*) from blocks" 2>/dev/null) | delcol3`
+export UPTIME=$($NODESTATS 2>/dev/null  | grep uptime | cut -f2 -d: | sed 's/ //g')
+export NODEUPTIME=$(echo $gre2"UPTIME IN DDHHMMSS:"$whi $(expr $UPTIME / 86400)/$(echo Days) - $(expr $UPTIME / 3600)/$(echo Hours) - $(expr $UPTIME / 60)/$(echo Minutes) - $(echo $UPTIME/Seconds) | delcol13 )
 ################## ###
 
 
@@ -412,7 +414,7 @@ export CONNESTABLISHED=`echo $gre2\ESTABLISHED CONNECTIONS:$whi $(echo $ESTABLCO
 
 ########################################## ###
 ### WIDGETS: TEXT HEADERS AND OTHER STUFFS ###
-export HEADMAIN=`echo -e $gre2\JLMO Jormungandr Live Monitor:$whi $(date -u) $gre2$s2 | delcolboldpipe2`
+export HEADMAIN=`echo -e $gre2\JLMÖ Jormungandr Live Monitor:$whi $(date -u) $gre2$s2 | delcolboldpipe2`
 export HEADINFO1=`echo $red\SYSTEM INFO: | delcol6`  
 export HEADINFO2=`echo $red\NODE STATISTICS: | delcol6`
 export HEADINFO3=`echo $red\NODE SETTINGS: | delcol6 | delcolboldpipe15`
@@ -506,7 +508,7 @@ echo -e $black$d2" $CONNESTABLISHED $STKPOOLNUM"
 echo -e $black$d2" $HALFDELIM $TOTALSTK"
 echo -e $black$d2" $HALFDELIM2"
 echo -e $black$d2" $HEADINFO2 $REWDSEPOCH $VALFORSTKERS $VALTAXED"
-echo -e $black$d2" $HALFDELIM2"            
+echo -e $black$d2" $NODEUPTIME"           
 echo -e $black$d2" $NODSTATUS $NODUPTIME $BCHAINTIME $STKPOOLACCREW"    
 echo -e $black$d2" $BLKRECVNUM $LSTBLTXC $LSTBLTRX"                        
 echo -e $black$d2" $LSTBLKHT $LSTBLSUM"              
@@ -541,7 +543,7 @@ done
 elif [ -z "$JPID" ] ; then
 echo
 echo
-echo -e $red\Jormungandr is not Running. $gre\JLMO Jormungandr Live Monitor will Exit. $s2
+echo -e $red\Jormungandr is not Running. $gre\JLMÖ Jormungandr Live Monitor will Exit. $s2
 echo
 echo
 echo
