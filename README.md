@@ -3,16 +3,16 @@
 Prior to launch the script, please edit it and set variables in following lines:
 
 ### BLOCKCHAIN DIR ###
-LINE 10: export BCHAINDIR=your-storage-path
+LINE 8: export BCHAINDIR=your-storage-path
 
 ### REST API STRING ###
-LINE 14: export RESTPORT=your-rest-port
+LINE 12: export RESTPORT=your-rest-port
 
 ### STAKEPOOL OWNER ACCOUNTS ###
-LINE 19: export STKPOOLOWNACC=your-stakepool-owner-account-address
+LINE 17: export STKPOOLOWNACC=your-stakepool-owner-account-address
 
 ### STAKE POOL ID ###
-LINE 22: export STKPOOLID=your-stakepool-id
+LINE 20: export STKPOOLID=your-stakepool-id
   
 If you encounter issues, please report them here and not in Stakepool Group.
 
