@@ -1,10 +1,8 @@
 #!/bin/bash
 
-### JLMO Jormungandr Live Monitor v0.6.0 ###
+### JLMO Jormungandr Live Monitor v0.6.1 ###
 ### Author: ADASnakePool ### 
-### Updated: 20200128 ###
-
-### DECLARE VARIABLES ###
+### Updated: 20200204 ###
 
 ### BLOCKCHAIN DIR and DB ###
 export BCHAINDIR=your-storage-path 
